@@ -22,7 +22,7 @@ h1, h2, h3, h4 {
   font-family: 'PT Sans', sans-serif;
 }
 h1 {
-  font-size: 4.5rem;
+  font-size: 4rem;
 }
 h2 {
   font-size: 3.5rem;
@@ -48,6 +48,37 @@ img {
 }
 
 
+/* GRID */
+@media (min-width: 768px) {
+  .grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .center-column {
+    justify-content: center;
+  }
+  .column-4 {
+    flex: 0 0 calc(33.3% - 1rem);
+  }
+  .column-4 img {
+    padding-right: 1.5rem;
+  }
+  .column-6 {
+    flex: 0 0 calc(50% - 1rem);
+  }
+  .column-8 {
+    flex: 0 0 calc(66.6% -1rem);
+  }
+  .column-10 {
+    flex: 0 0 calc(83.3 - 1rem);
+  }
+  .column-12 {
+    flex: 0 0 100%;
+  }
+}
+
+
 /* BUTTONS */
 .button {
   display: block;
@@ -60,10 +91,15 @@ img {
   font-weight: 700;
   text-transform: uppercase;
   font-size: 2rem;
+  flex: 0 0 100%;
 }
-@media (min-width: 420px) {
+.button:hover {
+  cursor: pointer;
+}
+@media (min-width: 768px) {
   .button {
     display: inline-block;
+    flex: 0 0 auto;
   }
 }
 .button-1 {
@@ -183,7 +219,6 @@ img {
 .course {
   padding-bottom: 3rem;
   border-bottom: 1px solid #E1E1E1;
-
 }
 .course:last-of-type {
   border: none;
@@ -193,9 +228,14 @@ img {
   font-weight: 700;
   font-size: 2rem;
 }
-.course p span {
+.course p span,
+.course p.description {
   font-weight: 400;
 }
+.course img {
+  margin-top: 1.5rem;
+}
+
 
 
 /* FOOTER */
@@ -213,4 +253,35 @@ img {
 }
 .site-footer p span {
   font-weight: 700;
+}
+.nav a {
+  text-decoration: none;
+}
+
+
+/* CONTACT */
+.contact-form {
+  padding: 5rem;
+  
+}
+.contact-form .field {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.contact-form .field label {
+  flex: 0 0 8rem;
+}
+.contact-form .field input:not([type=submit]),
+.contact-form textarea {
+  flex: 1;
+  border: 1px splid #E1E1E1;
+  padding: 1rem;
+}
+.contact-form textarea {
+  height: 20rem;
+}
+.contact-form .send {
+  display: flex;
+  justify-content: flex-end;
 }
